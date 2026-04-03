@@ -1,244 +1,157 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"></head>
-<body style="font-family:Arial,sans-serif;max-width:700px;margin:0 auto;padding:20px;color:#1a1a1a;">
-  <div style="border-bottom:2px solid #1a1a1a;padding-bottom:16px;margin-bottom:24px;">
-    <h1 style="font-size:22px;font-weight:700;margin:0;">Veille politique</h1>
-    <p style="font-size:13px;color:#888;margin:4px 0 0;">vendredi 3 avril 2026 — 20 articles analysés</p>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veille politique</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f5f5f5; color: #1a1a1a; }
+.container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+.header { border-bottom: 2px solid #1a1a1a; padding-bottom: 16px; margin-bottom: 24px; }
+.header h1 { font-size: 24px; font-weight: 700; }
+.header p { font-size: 13px; color: #888; margin-top: 4px; }
+.grid { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+.sidebar { background: white; border-radius: 8px; padding: 16px; height: fit-content; border: 1px solid #eee; }
+.sidebar h2 { font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+.filters { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.filter-btn { padding: 8px 12px; border-radius: 20px; border: 1px solid #ddd; background: white; color: #555; cursor: pointer; font-size: 13px; text-align: left; transition: all 0.15s; }
+.filter-btn.active { background: #1a1a1a; color: white; border-color: #1a1a1a; }
+.main { display: flex; flex-direction: column; gap: 20px; }
+.theme-block { background: white; border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
+.theme-header { padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+.theme-count { font-size: 12px; opacity: 0.8; }
+.article-item { padding: 10px 16px; border-top: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px; }
+.article-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.article-link { font-size: 13px; color: #1a1a1a; text-decoration: none; line-height: 1.4; font-weight: 500; }
+.article-link:hover { text-decoration: underline; }
+.article-resume { font-size: 11px; color: #888; margin-top: 3px; }
+.article-meta { font-size: 11px; color: #aaa; margin-top: 3px; }
+.importance { font-size: 12px; margin-left: auto; flex-shrink: 0; }
+.hidden { display: none; }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Veille politique</h1>
+    <p>vendredi 3 avril 2026 — 20 articles analysés</p>
   </div>
-  
-    <div style="margin-bottom:28px;">
-      <div style="background:#EEEDFE;border-left:4px solid #7F77DD;padding:10px 16px;border-radius:4px 4px 0 0;">
-        <span style="font-size:14px;font-weight:600;color:#3C3489;">LFI</span>
-        <span style="font-size:12px;color:#3C3489;margin-left:8px;">9 articles</span>
+  <div class="grid">
+    <div class="sidebar">
+      <h2>Filtrer</h2>
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">Tous (20)</button>
+        <button class="filter-btn" data-filter="Droite" style="border-left: 3px solid #BA7517;">Droite (3)</button><button class="filter-btn" data-filter="LFI" style="border-left: 3px solid #7F77DD;">LFI (9)</button><button class="filter-btn" data-filter="Institutionnel" style="border-left: 3px solid #888780;">Institutionnel (5)</button><button class="filter-btn" data-filter="Macron" style="border-left: 3px solid #639922;">Macron (1)</button><button class="filter-btn" data-filter="RN" style="border-left: 3px solid #378ADD;">RN (2)</button>
       </div>
-      <table style="width:100%;border-collapse:collapse;border:1px solid #7F77DD;border-top:none;border-radius:0 0 4px 4px;">
-        
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/leurodeputee-lfi-rima-hassan-placee-en-garde-a-vue-pour-apologie-du-terrorisme" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Rima Hassan en garde à vue pour apologie du terrorisme : de la drogue de synthèse retrouvée dans le sac de l'eurodéputée LFI</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Rima Hassan en garde à vue pour apologie du terrorisme avec drogue retrouvée.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●●</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/apres-sa-garde-a-vue-pour-apologie-du-terrorisme-rima-hassan-de-nouveau-convoquee-par-la-police-dans-une-autre-affaire" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Après sa garde à vue pour « apologie du terrorisme », Rima Hassan de nouveau convoquée par la police dans une autre affaire</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Rima Hassan convoquée par la police dans une nouvelle affaire judiciaire.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/le-depute-loic-prudhomme-quitte-lfi-denoncant-les-saillies-repetees-de-jean-luc-melenchon" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Le député Loïc Prud'homme quitte LFI, dénonçant les « saillies répétées » de Jean-Luc Mélenchon</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Loïc Prud'homme quitte LFI en critiquant les déclarations de Jean-Luc Mélenchon</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/politique/la-nouvelle-france-sempare-des-villes" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Municipales 2026 : La « Nouvelle France » de LFI s'empare des villes</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">LFI progresse dans les municipales 2026 avec sa stratégie Nouvelle France.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/politique/un-lfi-ressuscite-les-heures-sombres-dernier-sprint-pour-charles-alloncle-les-coulisses-politiques-de-la-semaine" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Un LFI ressuscite les heures sombres, dernier sprint pour Charles Alloncle… Les coulisses politiques de la semaine</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Polémique autour d'un député LFI et campagne de Charles Alloncle.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/il-y-a-de-la-violence-dextreme-droite-dans-le-pays-le-depute-lfi-raphael-arnault-sort-du-silence-et-veut-retourner-a-lassemblee" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">« Il y a de la violence d'extrême droite dans le pays » : le député LFI Raphaël Arnault sort du silence et veut retourner à l'Assemblée</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Le député LFI Raphaël Arnault dénonce les violences d'extrême droite et veut siéger.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/le-journaliste-jacques-cardoze-affirme-que-lfi-transmettait-des-informations-a-complement-denquete" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Le journaliste Jacques Cardoze affirme que LFI transmettait des informations à « Complément d'enquête »</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Jacques Cardoze accuse LFI de transmettre des informations à l'émission Complément d'enquête.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/regions/provence-alpes-cote-dazur/vaucluse/avignon/politique/raphael-arnault-no-show-sur-les-traces-du-depute-lfi-disparu-des-radars" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Raphaël Arnault « no show » : sur les traces du député LFI disparu des radars</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Le député LFI Raphaël Arnault est absent et introuvable depuis plusieurs semaines.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/valerie-pecresse-ecorche-le-nom-de-bally-bagayoko-lfi-hurle-au-racisme" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Valérie Pécresse écorche le nom de Bally Bagayoko, LFI hurle au racisme</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Pécresse prononce mal le nom de Bagayoko, LFI dénonce du racisme.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#3C3489;">●○○</td>
-      </tr>
-    
-      </table>
+      <h2 style="margin-bottom:16px;">Répartition</h2>
+      
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+        <span style="font-size:12px;font-weight:600;color:#633806;">Droite</span>
+        <span style="font-size:12px;color:#888;">3 articles</span>
+      </div>
+      <div style="background:#f0f0f0;border-radius:3px;height:6px;">
+        <div style="background:#BA7517;width:15%;height:6px;border-radius:3px;"></div>
+      </div>
     </div>
   
-    <div style="margin-bottom:28px;">
-      <div style="background:#F1EFE8;border-left:4px solid #888780;padding:10px 16px;border-radius:4px 4px 0 0;">
-        <span style="font-size:14px;font-weight:600;color:#444441;">Institutionnel</span>
-        <span style="font-size:12px;color:#444441;margin-left:8px;">6 articles</span>
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+        <span style="font-size:12px;font-weight:600;color:#3C3489;">LFI</span>
+        <span style="font-size:12px;color:#888;">9 articles</span>
       </div>
-      <table style="width:100%;border-collapse:collapse;border:1px solid #888780;border-top:none;border-radius:0 0 4px 4px;">
-        
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/anne-hidalgo-visee-par-une-enquete-du-pnf-sur-lattribution-dun-marche-public-la-mairie-de-paris-perquisitionnee" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Anne Hidalgo visée par une enquête du PNF sur l'attribution d'un marché public, la mairie de Paris perquisitionnée</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Anne Hidalgo visée par enquête PNF, perquisition mairie Paris pour marché public.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#444441;">●●●</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/politique/vous-vous-croyez-ou-les-provocations-de-xavier-niel-et-matthieu-pigasse-face-a-la-commission-denquete-sur-laudiovisuel-public" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">« Vous vous croyez où ? » Les provocations de Xavier Niel et Matthieu Pigasse face à la commission d'enquête sur l'audiovisuel public</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Niel et Pigasse provoquent lors de leur audition sur l'audiovisuel public.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#444441;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/politique/nagui-face-aux-deputes-une-ambiance-electrique-a-la-commission-denquete" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Nagui face aux députés : une ambiance électrique à la commission d'enquête</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Nagui auditionné par des députés dans une ambiance tendue en commission d'enquête.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#444441;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/politique/neutralite-et-service-public" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Neutralité et service public</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Question de la neutralité dans le service public français.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#444441;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/jo-2024-la-cour-des-comptes-denonce-les-depenses-demesurees-de-la-metropole-du-grand-paris" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">JO 2024 : la Cour des comptes dénonce les dépenses « démesurées » de la Métropole du Grand Paris</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">La Cour des comptes critique les dépenses excessives de la Métropole pour les JO.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#444441;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/en-direct-audiovisuel-public-patrick-sebastien-et-michel-drucker-auditionnes-par-la-commission-denquete" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Audiovisuel public : « D'entrée de jeu, Madame Ernotte voulait me dégager », fustige Patrick Sébastien</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Patrick Sébastien accuse Delphine Ernotte de vouloir l'écarter de l'audiovisuel public.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#444441;">●●○</td>
-      </tr>
-    
-      </table>
+      <div style="background:#f0f0f0;border-radius:3px;height:6px;">
+        <div style="background:#7F77DD;width:45%;height:6px;border-radius:3px;"></div>
+      </div>
     </div>
   
-    <div style="margin-bottom:28px;">
-      <div style="background:#EAF3DE;border-left:4px solid #639922;padding:10px 16px;border-radius:4px 4px 0 0;">
-        <span style="font-size:14px;font-weight:600;color:#27500A;">Macron</span>
-        <span style="font-size:12px;color:#27500A;margin-left:8px;">1 article</span>
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+        <span style="font-size:12px;font-weight:600;color:#444441;">Institutionnel</span>
+        <span style="font-size:12px;color:#888;">5 articles</span>
       </div>
-      <table style="width:100%;border-collapse:collapse;border:1px solid #639922;border-top:none;border-radius:0 0 4px 4px;">
-        
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/emmanuel-macron-se-fait-maltraiter-par-sa-femme-il-se-remet-encore-dune-droite-a-la-machoire-donald-trump-tacle-le-president-francais" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">« Emmanuel Macron se fait maltraiter par sa femme, il se remet encore d'une droite à la mâchoire » : Donald Trump tacle le président français</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Donald Trump attaque Emmanuel Macron avec des propos insultants sur sa vie personnelle.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#27500A;">●●○</td>
-      </tr>
-    
-      </table>
+      <div style="background:#f0f0f0;border-radius:3px;height:6px;">
+        <div style="background:#888780;width:25%;height:6px;border-radius:3px;"></div>
+      </div>
     </div>
   
-    <div style="margin-bottom:28px;">
-      <div style="background:#E6F1FB;border-left:4px solid #378ADD;padding:10px 16px;border-radius:4px 4px 0 0;">
-        <span style="font-size:14px;font-weight:600;color:#0C447C;">RN</span>
-        <span style="font-size:12px;color:#0C447C;margin-left:8px;">2 articles</span>
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+        <span style="font-size:12px;font-weight:600;color:#27500A;">Macron</span>
+        <span style="font-size:12px;color:#888;">1 articles</span>
       </div>
-      <table style="width:100%;border-collapse:collapse;border:1px solid #378ADD;border-top:none;border-radius:0 0 4px 4px;">
-        
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/pas-de-calais-la-nouvelle-maire-rn-retire-la-plaque-en-hommage-au-terroriste-georges-ibrahim-abdallah" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Pas-de-Calais : la nouvelle maire RN retire la plaque en hommage au terroriste Georges Ibrahim Abdallah</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Une maire RN retire une plaque commémorative dédiée au terroriste Georges Ibrahim Abdallah.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#0C447C;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/regions/occitanie/pyrenees-orientales/na/politique/jen-avais-marre-de-voir-le-drapeau-europeen-sur-ma-mairie-je-lai-decroche-la-maire-rn-assume" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">« J'en avais marre de voir le drapeau européen sur ma mairie, je l'ai décroché », la maire RN assume</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Une maire RN retire le drapeau européen de sa mairie.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#0C447C;">●●○</td>
-      </tr>
-    
-      </table>
+      <div style="background:#f0f0f0;border-radius:3px;height:6px;">
+        <div style="background:#639922;width:5%;height:6px;border-radius:3px;"></div>
+      </div>
     </div>
   
-    <div style="margin-bottom:28px;">
-      <div style="background:#FAEEDA;border-left:4px solid #BA7517;padding:10px 16px;border-radius:4px 4px 0 0;">
-        <span style="font-size:14px;font-weight:600;color:#633806;">Droite</span>
-        <span style="font-size:12px;color:#633806;margin-left:8px;">2 articles</span>
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+        <span style="font-size:12px;font-weight:600;color:#0C447C;">RN</span>
+        <span style="font-size:12px;color:#888;">2 articles</span>
       </div>
-      <table style="width:100%;border-collapse:collapse;border:1px solid #BA7517;border-top:none;border-radius:0 0 4px 4px;">
-        
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/politique/depuis-sa-victoire-a-nice-eric-ciotti-grimpe-de-six-places-dans-le-classement-des-personnalites-influentes" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">Depuis sa victoire à Nice, Eric Ciotti grimpe de six places dans le classement des personnalités influentes</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Eric Ciotti progresse de six rangs dans le classement d'influence après Nice.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#633806;">●●○</td>
-      </tr>
-    
-      <tr>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;">
-          <a href="https://www.valeursactuelles.com/clubvaleurs/regions/provence-alpes-cote-dazur/alpes-maritimes/nice/politique/a-nice-eric-ciotti-savoure-sa-nouvelle-vie-de-maire" style="color:#1a1a1a;text-decoration:none;font-size:13px;line-height:1.4;">À Nice, Éric Ciotti savoure sa nouvelle vie de maire</a>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Éric Ciotti prend ses fonctions de maire de Nice.</div>
-        </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:12px;color:#888;">Valeurs Actuelles - Politique</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap;font-size:13px;color:#633806;">●●○</td>
-      </tr>
-    
-      </table>
+      <div style="background:#f0f0f0;border-radius:3px;height:6px;">
+        <div style="background:#378ADD;width:10%;height:6px;border-radius:3px;"></div>
+      </div>
     </div>
   
-  <div style="border-top:1px solid #eee;padding-top:12px;margin-top:8px;font-size:11px;color:#aaa;text-align:center;">
-    Généré automatiquement par votre veille n8n
+    </div>
+    <div class="main" id="articles"></div>
   </div>
+</div>
+<script>
+const data = [{"titre":"Perpignan : comment les droites s'unissent à l'échelle municipale","lien":"https://www.valeursactuelles.com/clubvaleurs/regions/occitanie/pyrenees-orientales/perpignan/politique/perpignan-comment-les-droites-sunissent-a-lechelle-municipale","source":"Valeurs Actuelles - Politique","date":"","theme":"Droite","resume":"Union des droites à Perpignan au niveau municipal.","importance":2},{"titre":"Après sa garde à vue pour « apologie du terrorisme », Rima Hassan de nouveau convoquée par la police dans une autre affaire","lien":"https://www.valeursactuelles.com/politique/apres-sa-garde-a-vue-pour-apologie-du-terrorisme-rima-hassan-de-nouveau-convoquee-par-la-police-dans-une-autre-affaire","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Rima Hassan convoquée par la police dans une nouvelle affaire après sa garde à vue.","importance":2},{"titre":"« Vous vous croyez où ? » Les provocations de Xavier Niel et Matthieu Pigasse face à la commission d'enquête sur l'audiovisuel public","lien":"https://www.valeursactuelles.com/clubvaleurs/politique/vous-vous-croyez-ou-les-provocations-de-xavier-niel-et-matthieu-pigasse-face-a-la-commission-denquete-sur-laudiovisuel-public","source":"Valeurs Actuelles - Politique","date":"","theme":"Institutionnel","resume":"Xavier Niel et Matthieu Pigasse créent la polémique devant la commission d'enquête parlementaire.","importance":2},{"titre":"Rima Hassan en garde à vue pour apologie du terrorisme : de la drogue de synthèse retrouvée dans le sac de l'eurodéputée LFI","lien":"https://www.valeursactuelles.com/politique/leurodeputee-lfi-rima-hassan-placee-en-garde-a-vue-pour-apologie-du-terrorisme","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Eurodéputée LFI Rima Hassan en garde à vue pour apologie terrorisme avec drogue trouvée","importance":3},{"titre":"Le député Loïc Prud'homme quitte LFI, dénonçant les « saillies répétées » de Jean-Luc Mélenchon","lien":"https://www.valeursactuelles.com/politique/le-depute-loic-prudhomme-quitte-lfi-denoncant-les-saillies-repetees-de-jean-luc-melenchon","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Le député Loïc Prud'homme quitte LFI en critiquant les déclarations de Mélenchon.","importance":2},{"titre":"« Emmanuel Macron se fait maltraiter par sa femme, il se remet encore d'une droite à la mâchoire » : Donald Trump tacle le président français","lien":"https://www.valeursactuelles.com/politique/emmanuel-macron-se-fait-maltraiter-par-sa-femme-il-se-remet-encore-dune-droite-a-la-machoire-donald-trump-tacle-le-president-francais","source":"Valeurs Actuelles - Politique","date":"","theme":"Macron","resume":"Donald Trump attaque Emmanuel Macron avec des propos personnels sur sa vie conjugale.","importance":2},{"titre":"Municipales 2026 : La « Nouvelle France » de LFI s'empare des villes","lien":"https://www.valeursactuelles.com/clubvaleurs/politique/la-nouvelle-france-sempare-des-villes","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"LFI développe sa stratégie pour conquérir les municipalités aux élections de 2026.","importance":2},{"titre":"Nagui face aux députés : une ambiance électrique à la commission d'enquête","lien":"https://www.valeursactuelles.com/clubvaleurs/politique/nagui-face-aux-deputes-une-ambiance-electrique-a-la-commission-denquete","source":"Valeurs Actuelles - Politique","date":"","theme":"Institutionnel","resume":"Nagui auditionné par une commission d'enquête parlementaire dans une atmosphère tendue.","importance":2},{"titre":"Un LFI ressuscite les heures sombres, dernier sprint pour Charles Alloncle… Les coulisses politiques de la semaine","lien":"https://www.valeursactuelles.com/clubvaleurs/politique/un-lfi-ressuscite-les-heures-sombres-dernier-sprint-pour-charles-alloncle-les-coulisses-politiques-de-la-semaine","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Polémique autour d'un député LFI et campagne de Charles Alloncle","importance":2},{"titre":"« Il y a de la violence d'extrême droite dans le pays » : le député LFI Raphaël Arnault sort du silence et veut retourner à l'Assemblée","lien":"https://www.valeursactuelles.com/politique/il-y-a-de-la-violence-dextreme-droite-dans-le-pays-le-depute-lfi-raphael-arnault-sort-du-silence-et-veut-retourner-a-lassemblee","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Le député LFI Raphaël Arnault évoque la violence d'extrême droite et son retour à l'Assemblée.","importance":2},{"titre":"Pas-de-Calais : la nouvelle maire RN retire la plaque en hommage au terroriste Georges Ibrahim Abdallah","lien":"https://www.valeursactuelles.com/politique/pas-de-calais-la-nouvelle-maire-rn-retire-la-plaque-en-hommage-au-terroriste-georges-ibrahim-abdallah","source":"Valeurs Actuelles - Politique","date":"","theme":"RN","resume":"Une maire RN du Pas-de-Calais retire une plaque honorant Georges Ibrahim Abdallah.","importance":2},{"titre":"Valérie Pécresse écorche le nom de Bally Bagayoko, LFI hurle au racisme","lien":"https://www.valeursactuelles.com/politique/valerie-pecresse-ecorche-le-nom-de-bally-bagayoko-lfi-hurle-au-racisme","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Pécresse prononce mal le nom de Bagayoko, LFI dénonce du racisme.","importance":1},{"titre":"Depuis sa victoire à Nice, Eric Ciotti grimpe de six places dans le classement des personnalités influentes","lien":"https://www.valeursactuelles.com/politique/depuis-sa-victoire-a-nice-eric-ciotti-grimpe-de-six-places-dans-le-classement-des-personnalites-influentes","source":"Valeurs Actuelles - Politique","date":"","theme":"Droite","resume":"Eric Ciotti gagne six places au classement des personnalités influentes après Nice.","importance":2},{"titre":"Le journaliste Jacques Cardoze affirme que LFI transmettait des informations à « Complément d'enquête »","lien":"https://www.valeursactuelles.com/politique/le-journaliste-jacques-cardoze-affirme-que-lfi-transmettait-des-informations-a-complement-denquete","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Jacques Cardoze accuse LFI de transmettre des informations à l'émission Complément d'enquête.","importance":2},{"titre":"Neutralité et service public","lien":"https://www.valeursactuelles.com/clubvaleurs/politique/neutralite-et-service-public","source":"Valeurs Actuelles - Politique","date":"","theme":"Institutionnel","resume":"Question de la neutralité dans le service public français.","importance":2},{"titre":"Raphaël Arnault « no show » : sur les traces du député LFI disparu des radars","lien":"https://www.valeursactuelles.com/clubvaleurs/regions/provence-alpes-cote-dazur/vaucluse/avignon/politique/raphael-arnault-no-show-sur-les-traces-du-depute-lfi-disparu-des-radars","source":"Valeurs Actuelles - Politique","date":"","theme":"LFI","resume":"Le député LFI Raphaël Arnault est absent et introuvable des radars politiques.","importance":2},{"titre":"À Nice, Éric Ciotti savoure sa nouvelle vie de maire","lien":"https://www.valeursactuelles.com/clubvaleurs/regions/provence-alpes-cote-dazur/alpes-maritimes/nice/politique/a-nice-eric-ciotti-savoure-sa-nouvelle-vie-de-maire","source":"Valeurs Actuelles - Politique","date":"","theme":"Droite","resume":"Éric Ciotti prend ses fonctions de maire de Nice après son élection.","importance":2},{"titre":"JO 2024 : la Cour des comptes dénonce les dépenses « démesurées » de la Métropole du Grand Paris","lien":"https://www.valeursactuelles.com/politique/jo-2024-la-cour-des-comptes-denonce-les-depenses-demesurees-de-la-metropole-du-grand-paris","source":"Valeurs Actuelles - Politique","date":"","theme":"Institutionnel","resume":"La Cour des comptes critique les dépenses excessives de la Métropole pour les JO.","importance":2},{"titre":"« J'en avais marre de voir le drapeau européen sur ma mairie, je l'ai décroché », la maire RN assume","lien":"https://www.valeursactuelles.com/clubvaleurs/regions/occitanie/pyrenees-orientales/na/politique/jen-avais-marre-de-voir-le-drapeau-europeen-sur-ma-mairie-je-lai-decroche-la-maire-rn-assume","source":"Valeurs Actuelles - Politique","date":"","theme":"RN","resume":"Une maire RN retire le drapeau européen de sa mairie par conviction.","importance":2},{"titre":"Anne Hidalgo visée par une enquête du PNF sur l'attribution d'un marché public, la mairie de Paris perquisitionnée","lien":"https://www.valeursactuelles.com/politique/anne-hidalgo-visee-par-une-enquete-du-pnf-sur-lattribution-dun-marche-public-la-mairie-de-paris-perquisitionnee","source":"Valeurs Actuelles - Politique","date":"","theme":"Institutionnel","resume":"Anne Hidalgo visée par une enquête sur un marché public, perquisition à Paris.","importance":3}];
+const couleurs = {"LFI":{"bg":"#EEEDFE","border":"#7F77DD","text":"#3C3489","dot":"#7F77DD"},"RN":{"bg":"#E6F1FB","border":"#378ADD","text":"#0C447C","dot":"#378ADD"},"Macron":{"bg":"#EAF3DE","border":"#639922","text":"#27500A","dot":"#1D9E75"},"Droite":{"bg":"#FAEEDA","border":"#BA7517","text":"#633806","dot":"#BA7517"},"Institutionnel":{"bg":"#F1EFE8","border":"#888780","text":"#444441","dot":"#888780"}};
+
+function importance(n) {
+  return '●'.repeat(n) + '○'.repeat(3 - n);
+}
+
+function render(filter) {
+  const filtered = filter === 'all' ? data : data.filter(a => (a.theme || 'Institutionnel') === filter);
+  const parTheme = {};
+  for (const a of filtered) {
+    const t = a.theme || 'Institutionnel';
+    if (!parTheme[t]) parTheme[t] = [];
+    parTheme[t].push(a);
+  }
+  const container = document.getElementById('articles');
+  container.innerHTML = Object.entries(parTheme).map(([theme, arts]) => {
+    const c = couleurs[theme] || couleurs.Institutionnel;
+    const lignes = arts.sort((a, b) => (b.importance || 0) - (a.importance || 0)).map(a => `
+      <div class="article-item">
+        <div class="article-dot" style="background:${c.dot};"></div>
+        <div style="flex:1;">
+          <a class="article-link" href="${a.lien}" target="_blank">${a.titre}</a>
+          <div class="article-resume">${a.resume || ''}</div>
+          <div class="article-meta">${a.source || ''}</div>
+        </div>
+        <div class="importance" style="color:${c.text};">${importance(a.importance || 1)}</div>
+      </div>
+    `).join('');
+    return `
+      <div class="theme-block">
+        <div class="theme-header" style="background:${c.bg};border-left:4px solid ${c.border};">
+          <span style="font-size:14px;font-weight:700;color:${c.text};">${theme}</span>
+          <span class="theme-count" style="color:${c.text};">${arts.length} article${arts.length > 1 ? 's' : ''}</span>
+        </div>
+        ${lignes}
+      </div>
+    `;
+  }).join('');
+}
+
+document.getElementById('filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render(btn.dataset.filter);
+});
+
+render('all');
+</script>
 </body>
 </html>
